@@ -251,6 +251,11 @@ css
 Version history
 ===============
 
+1.3.0
+-----
+
+- Updated to the latest version of CodeMirror and added support for Meteor >= 1.2.0
+
 1.2.5
 -----
 
