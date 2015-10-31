@@ -11,10 +11,213 @@ Package.onUse(function (api) {
 		api.versionsFrom('METEOR@1.2');
 	}
 
+	api.use([
+		'templating', 
+		'underscore'
+	], 'client');
+
+	/**
+	 *	CodeMirror
+	 */
 	api.addFiles([
 		'lib/codemirror/lib/codemirror.css',
 		'lib/codemirror/lib/codemirror.js'
 	], 'client');
 
-	api.export('CodeMirror', 'client');
+	/**
+	 *	Component
+	 */
+	api.addFiles([
+		'lib/component/component.html',
+		'lib/component/component.js'
+	], 'client');
+
+	/**
+	 *	Extras: lint
+	 */
+	[	'coffeescript-lint.js', 
+		'css-lint.js', 
+		'html-lint.js', 
+		'javascript-lint.js', 
+		'json-lint.js', 
+		'lint.css', 
+		'yaml-lint.js', 
+		'lint.js'
+	].forEach((file) => {
+		api.addFiles(`lib/codemirror/addon/lint/${item}`, 'client');
+	});
+	api.export([
+		'jsonlint',
+		'JSHINT',
+		'CSSLint'
+	], 'client');
+
+	/**
+	 *	Extras: selection
+	 */
+	[	'active-line.js',
+		'mark-selection.js',
+		'selection-pointer.js'
+	].forEach((file) => {
+		api.addFiles(`lib/codemirror/addon/selection/${item}`, 'client');
+	});
+
+	/**
+	 *	Extras: search
+ 	 */
+ 	[	'match-highlighter.js',
+		'matchesonscrollbar.css',
+		'matchesonscrollbar.js',
+		'search.js',
+		'searchcursor.js'
+	].forEach((file) => {
+		api.addFiles(`lib/codemirror/addon/search/${item}`, 'client');
+	});
+
+	/**
+	 *	Extras: mode
+	 */
+	[	'loadmode.js',
+		'multiplex_test.js',
+		'multiplex.js',
+		'overlay.js',
+		'simple.js'
+	].forEach((file) => {
+		api.addFiles(`lib/codemirror/addon/mode/${item}`, 'client');
+	});
+
+	/**
+	 *	Extras: edit
+	 */
+	[	'closebrackets.js',
+		'closetag.js',
+		'continuelist.js',
+		'matchbreakers.js',
+		'matchtags.js',
+		'trailingspace.js'
+	].forEach((file) => {
+		api.addFiles(`lib/codemirror/addon/edit/${item}`, 'client');
+	});
+
+	/**
+	 *	Extras: comment
+	 */
+	[	'comment.js',
+		'continuecomment.js'
+	].forEach((file) => {
+		api.addFiles(`lib/codemirror/addon/comment/${item}`, 'client');
+	});
+
+	/**
+	 *	Extras: dialog
+	 */
+	[	'dialog.js',
+		'dialog.css'
+	].forEach((file) => {
+		api.addFiles(`lib/codemirror/addon/dialog/${item}`, 'client');
+	});
+
+	/**
+	 *	Extras: comment
+	 */
+	[	'comment.js',
+		'continuecomment.js'
+	].forEach((file) => {
+		api.addFiles(`lib/codemirror/addon/comment/${item}`, 'client');
+	});
+
+	/**
+	 *	Extras: display
+	 */
+	[	'autorefresh.js',
+		'fullscreen.css',
+		'fullscreen.js',
+		'panel.js',
+		'placeholder.js',
+		'rulers.js'
+	].forEach((file) => {
+		api.addFiles(`lib/codemirror/addon/display/${item}`, 'client');
+	});
+
+	/**
+	 *	Extras: fold
+	 */
+	[	'brace-fold.js',
+		'comment-fold.js',
+		'foldcode.js',
+		'foldgutter.js',
+		'foldgutter.css',
+		'indent-fold.js',
+		'markdown-fold.js',
+		'xml-fold.js'
+	].forEach((file) => {
+		api.addFiles(`lib/codemirror/addon/fold/${item}`, 'client');
+	});
+
+	/**
+	 *	Extras: hint
+	 */
+	[	'anyword-hint.js',
+		'css-hint.js',
+		'html-hint.js',
+		'javascript-hint.js',
+		'show-hint.css',
+		'shot-hint.js',
+		'sql-hint.js',
+		'xml-hint.js'
+	].forEach((file) => {
+		api.addFiles(`lib/codemirror/addon/hint/${item}`, 'client');
+	});
+
+	/**
+	 *	Extras: merge
+	 */
+	[	'merge.js',
+		'merge.css'
+	].forEach((file) => {
+		api.addFiles(`lib/codemirror/addon/merge/${item}`, 'client');
+	});
+
+	/**
+	 *	Extras: runmode
+	 */
+	[	'colorize.js',
+		'runmode-standalone.js',
+		'runmode.js',
+		'runmode.node.js'
+	].forEach((file) => {
+		api.addFiles(`lib/codemirror/addon/runmode/${item}`, 'client');
+	});
+
+	/**
+	 *	Extras: runmode
+	 */
+	[	'annotatescrollbar.js',
+		'scrollpastend.js',
+		'simplescrollbars.css',
+		'simplescrollbars.js'
+	].forEach((file) => {
+		api.addFiles(`lib/codemirror/addon/scroll/${item}`, 'client');
+	});
+
+	/**
+	 *	Extras: tern
+	 */
+	[	'tern.css',
+		'tern.js',
+		'worker.js'
+	].forEach((file) => {
+		api.addFiles(`lib/codemirror/addon/tern/${item}`, 'client');
+	});
+
+	/**
+	 *	Extras: wrap
+	 */
+	[	'hardwrap.js'].forEach((file) => {
+		api.addFiles(`lib/codemirror/addon/wrap/${item}`, 'client');
+	});
+
+
+	// api.export('CodeMirror', 'client');
+
 });
