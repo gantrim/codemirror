@@ -43,8 +43,8 @@ Package.onUse(function (api) {
 		'lint.css', 
 		'yaml-lint.js', 
 		'lint.js'
-	].forEach((file) => {
-		api.addFiles(`lib/codemirror/addon/lint/${item}`, 'client');
+	].forEach(function(item) {
+		api.addFiles('lib/codemirror/addon/lint/' + item, 'client');
 	});
 	api.export([
 		'jsonlint',
@@ -58,8 +58,8 @@ Package.onUse(function (api) {
 	[	'active-line.js',
 		'mark-selection.js',
 		'selection-pointer.js'
-	].forEach((file) => {
-		api.addFiles(`lib/codemirror/addon/selection/${item}`, 'client');
+	].forEach(function(item) {
+		api.addFiles('lib/codemirror/addon/selection/' + item, 'client');
 	});
 
 	/**
@@ -70,8 +70,8 @@ Package.onUse(function (api) {
 		'matchesonscrollbar.js',
 		'search.js',
 		'searchcursor.js'
-	].forEach((file) => {
-		api.addFiles(`lib/codemirror/addon/search/${item}`, 'client');
+	].forEach(function(item) {
+		api.addFiles('lib/codemirror/addon/search/' + item, 'client');
 	});
 
 	/**
@@ -82,8 +82,8 @@ Package.onUse(function (api) {
 		'multiplex.js',
 		'overlay.js',
 		'simple.js'
-	].forEach((file) => {
-		api.addFiles(`lib/codemirror/addon/mode/${item}`, 'client');
+	].forEach(function(item) {
+		api.addFiles('lib/codemirror/addon/mode/' + item, 'client');
 	});
 
 	/**
@@ -92,11 +92,11 @@ Package.onUse(function (api) {
 	[	'closebrackets.js',
 		'closetag.js',
 		'continuelist.js',
-		'matchbreakers.js',
+		'matchbrackets.js',
 		'matchtags.js',
 		'trailingspace.js'
-	].forEach((file) => {
-		api.addFiles(`lib/codemirror/addon/edit/${item}`, 'client');
+	].forEach(function(item) {
+		api.addFiles('lib/codemirror/addon/edit/' + item, 'client');
 	});
 
 	/**
@@ -104,8 +104,8 @@ Package.onUse(function (api) {
 	 */
 	[	'comment.js',
 		'continuecomment.js'
-	].forEach((file) => {
-		api.addFiles(`lib/codemirror/addon/comment/${item}`, 'client');
+	].forEach(function(item) {
+		api.addFiles('lib/codemirror/addon/comment/' + item, 'client');
 	});
 
 	/**
@@ -113,17 +113,8 @@ Package.onUse(function (api) {
 	 */
 	[	'dialog.js',
 		'dialog.css'
-	].forEach((file) => {
-		api.addFiles(`lib/codemirror/addon/dialog/${item}`, 'client');
-	});
-
-	/**
-	 *	Extras: comment
-	 */
-	[	'comment.js',
-		'continuecomment.js'
-	].forEach((file) => {
-		api.addFiles(`lib/codemirror/addon/comment/${item}`, 'client');
+	].forEach(function(item) {
+		api.addFiles('lib/codemirror/addon/dialog/' + item, 'client');
 	});
 
 	/**
@@ -135,8 +126,8 @@ Package.onUse(function (api) {
 		'panel.js',
 		'placeholder.js',
 		'rulers.js'
-	].forEach((file) => {
-		api.addFiles(`lib/codemirror/addon/display/${item}`, 'client');
+	].forEach(function(item) {
+		api.addFiles('lib/codemirror/addon/display/' + item, 'client');
 	});
 
 	/**
@@ -150,8 +141,8 @@ Package.onUse(function (api) {
 		'indent-fold.js',
 		'markdown-fold.js',
 		'xml-fold.js'
-	].forEach((file) => {
-		api.addFiles(`lib/codemirror/addon/fold/${item}`, 'client');
+	].forEach(function(item) {
+		api.addFiles('lib/codemirror/addon/fold/' + item, 'client');
 	});
 
 	/**
@@ -162,11 +153,11 @@ Package.onUse(function (api) {
 		'html-hint.js',
 		'javascript-hint.js',
 		'show-hint.css',
-		'shot-hint.js',
+		'show-hint.js',
 		'sql-hint.js',
 		'xml-hint.js'
-	].forEach((file) => {
-		api.addFiles(`lib/codemirror/addon/hint/${item}`, 'client');
+	].forEach(function(item) {
+		api.addFiles('lib/codemirror/addon/hint/' + item, 'client');
 	});
 
 	/**
@@ -174,8 +165,8 @@ Package.onUse(function (api) {
 	 */
 	[	'merge.js',
 		'merge.css'
-	].forEach((file) => {
-		api.addFiles(`lib/codemirror/addon/merge/${item}`, 'client');
+	].forEach(function(item) {
+		api.addFiles('lib/codemirror/addon/merge/' + item, 'client');
 	});
 
 	/**
@@ -185,8 +176,8 @@ Package.onUse(function (api) {
 		'runmode-standalone.js',
 		'runmode.js',
 		'runmode.node.js'
-	].forEach((file) => {
-		api.addFiles(`lib/codemirror/addon/runmode/${item}`, 'client');
+	].forEach(function(item) {
+		api.addFiles('lib/codemirror/addon/runmode/' + item, 'client');
 	});
 
 	/**
@@ -196,8 +187,8 @@ Package.onUse(function (api) {
 		'scrollpastend.js',
 		'simplescrollbars.css',
 		'simplescrollbars.js'
-	].forEach((file) => {
-		api.addFiles(`lib/codemirror/addon/scroll/${item}`, 'client');
+	].forEach(function(item) {
+		api.addFiles('lib/codemirror/addon/scroll/' + item, 'client');
 	});
 
 	/**
@@ -206,17 +197,16 @@ Package.onUse(function (api) {
 	[	'tern.css',
 		'tern.js',
 		'worker.js'
-	].forEach((file) => {
-		api.addFiles(`lib/codemirror/addon/tern/${item}`, 'client');
+	].forEach(function(item) {
+		api.addFiles('lib/codemirror/addon/tern/' + item, 'client');
 	});
 
 	/**
 	 *	Extras: wrap
 	 */
-	[	'hardwrap.js'].forEach((file) => {
-		api.addFiles(`lib/codemirror/addon/wrap/${item}`, 'client');
+	[	'hardwrap.js'].forEach(function(item) {
+		api.addFiles('lib/codemirror/addon/wrap/' + item, 'client');
 	});
-
 
 	// api.export('CodeMirror', 'client');
 
