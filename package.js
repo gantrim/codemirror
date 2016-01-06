@@ -1,7 +1,7 @@
 Package.describe({
     name: 'gantrim:codemirror',
     summary: 'CodeMirror editor for Meteor >= 1.2',
-    version: '1.3.2',
+    version: '1.3.21',
     git: 'https://github.com/gantrim/codemirror.git'
 });
 
@@ -216,7 +216,7 @@ Package.onUse(function (api) {
     });
 
     var themeCssFiles = [
-        "3024-day.css"
+        "3024-day.css",
         "3024-night.css",
         "abcdef.css",
         "ambiance-mobile.css",
