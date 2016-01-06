@@ -1,8 +1,8 @@
 Package.describe({
-	name: 'perak:codemirror',
+	name: 'gantrim:codemirror',
 	summary: 'CodeMirror editor for Meteor >= 1.2',
-	version: '1.3.0',
-	git: 'https://github.com/perak/codemirror.git'
+	version: '1.3.1',
+	git: 'https://github.com/gantrim/codemirror.git'
 });
 
 Package.onUse(function (api) {
