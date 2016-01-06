@@ -7,10 +7,13 @@ Package.describe({
 
 Package.onUse(function (api) {
 
-    api.versionsFrom(process.env.METEOR_VERSION);
-    api.use([
-        'templating',
-        'underscore'
+    if(api.versionsFrom) {
+		api.versionsFrom('METEOR@1.2');
+	}
+	
+     api.use([
+        'templating@1.1.5',
+        'underscore@1.0.4'
     ], 'client');
 
     /**
