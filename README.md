@@ -1,7 +1,17 @@
 Meteor CodeMirror package
 =========================
 
-<a href="http://codemirror.net/" target="_blank">CodeMirror</a> packaged for Meteor. **CodeMirror** is a versatile text editor implemented in JavaScript for the browser.
+<a href="http://codemirror.net/" target="_blank">CodeMirror 5.8.1</a> packaged for Meteor. **CodeMirror** is a versatile text editor implemented in JavaScript for the browser.
+
+**NOTE: I am in the process of updating this package to the latest version of codemirror. It is currently using 5.8.1 but some features are disabled at the moment. I would not recommend using this in any production/critical app at the moment it has not been thoroughly tested**
+
+**Disabled/Broken Features**
+* Multiplex Mode
+* Merge
+* Runmode
+* Tern
+
+*There may be others*
 
 
 Usage
