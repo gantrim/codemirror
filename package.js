@@ -1,17 +1,17 @@
 Package.describe({
     name: 'gantrim:codemirror',
     summary: 'CodeMirror editor for Meteor >= 1.2',
-    version: '1.3.1',
+    version: '1.3.2',
     git: 'https://github.com/gantrim/codemirror.git'
 });
 
 Package.onUse(function (api) {
 
-    if(api.versionsFrom) {
-		api.versionsFrom('METEOR@1.2');
-	}
-	
-     api.use([
+    if (api.versionsFrom) {
+        api.versionsFrom('METEOR@1.2');
+    }
+
+    api.use([
         'templating@1.1.5',
         'underscore@1.0.4'
     ], 'client');
@@ -213,6 +213,57 @@ Package.onUse(function (api) {
      */
     ['hardwrap.js'].forEach(function (item) {
         api.addFiles('lib/codemirror/addon/wrap/' + item, 'client');
+    });
+
+    var themeCssFiles = [
+        "3024-day.css"
+        "3024-night.css",
+        "abcdef.css",
+        "ambiance-mobile.css",
+        "ambiance.css",
+        "base16-dark.css",
+        "base16-light.css",
+        "bespin.css",
+        "blackboard.css",
+        "cobalt.css",
+        "colorforth.css",
+        "dracula.css",
+        "eclipse.css",
+        "elegant.css",
+        "erlang-dark.css",
+        "hopscotch.css",
+        "icecoder.css",
+        "isotope.css",
+        "lesser-dark.css",
+        "liquibyte.css",
+        "material.css",
+        "mbo.css",
+        "mdn-like.css",
+        "midnight.css",
+        "monokai.css",
+        "neat.css",
+        "neo.css",
+        "night.css",
+        "paraiso-dark.css",
+        "paraiso-light.css",
+        "pastel-on-dark.css",
+        "railscasts.css",
+        "rubyblue.css",
+        "seti.css",
+        "solarized.css",
+        "the-matrix.css",
+        "tomorrow-night-bright.css",
+        "tomorrow-night-eighties.css",
+        "ttcn.css",
+        "twilight.css",
+        "vibrant-ink.css",
+        "xq-dark.css",
+        "xq-light.css",
+        "yeti.css",
+        "zenburn.css"];
+
+    themeCssFiles.forEach(function (cssFile) {
+        api.add_files('lib/codemirror/theme/' + cssFile, "client");
     });
 
     // api.export('CodeMirror', 'client');
