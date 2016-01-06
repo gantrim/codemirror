@@ -1,7 +1,7 @@
 Package.describe({
     name: 'gantrim:codemirror',
     summary: 'CodeMirror editor for Meteor >= 1.2',
-    version: '1.3.21',
+    version: '1.3.22',
     git: 'https://github.com/gantrim/codemirror.git'
 });
 
@@ -165,12 +165,12 @@ Package.onUse(function (api) {
     //TODO: Fix merge.js diff_match_patch
     //
     ///**
-    // *	Extras: merge
+    // *    Extras: merge
     // */
-    //[	'merge.js',
-    //	'merge.css'
+    //[ 'merge.js',
+    //  'merge.css'
     //].forEach(function(item) {
-    //	api.addFiles('lib/codemirror/addon/merge/' + item, 'client');
+    //  api.addFiles('lib/codemirror/addon/merge/' + item, 'client');
     //});
 
 
@@ -215,7 +215,7 @@ Package.onUse(function (api) {
         api.addFiles('lib/codemirror/addon/wrap/' + item, 'client');
     });
 
-    var themeCssFiles = [
+    var themeCSSFiles = [
         "3024-day.css",
         "3024-night.css",
         "abcdef.css",
@@ -260,12 +260,124 @@ Package.onUse(function (api) {
         "xq-dark.css",
         "xq-light.css",
         "yeti.css",
-        "zenburn.css"];
-
-    themeCssFiles.forEach(function (cssFile) {
+        "zenburn.css"
+    ];
+    themeCSSFiles.forEach(function (cssFile) {
         api.add_files('lib/codemirror/theme/' + cssFile, "client");
     });
 
-    // api.export('CodeMirror', 'client');
-
+    var modes = [
+        "apl",
+        "asciiarmor",
+        "asn.1",
+        "asterisk",
+        "brainfuck",
+        "clike",
+        "clojure",
+        "cmake",
+        "cobol",
+        "coffeescript",
+        "commonlisp",
+        "css",
+        "cypher",
+        "d",
+        "dart",
+        "diff",
+        "django",
+        "dockerfile",
+        "dtd",
+        "dylan",
+        "ebnf",
+        "ecl",
+        "eiffel",
+        "elm",
+        "erlang",
+        "factor",
+        "forth",
+        "fortran",
+        "gas",
+        "gfm",
+        "gherkin",
+        "go",
+        "groovy",
+        "haml",
+        "handlebars",
+        "haskell",
+        "haxe",
+        "htmlembedded",
+        "htmlmixed",
+        "http",
+        "idl",
+        "jade",
+        "javascript",
+        "jinja2",
+        "julia",
+        "livescript",
+        "lua",
+        "markdown",
+        "mathematica",
+        "mirc",
+        "mllike",
+        "modelica",
+        "mscgen",
+        "mumps",
+        "nginx",
+        "nsis",
+        "ntriples",
+        "octave",
+        "oz",
+        "pascal",
+        "pegjs",
+        "perl",
+        "php",
+        "pig",
+        "properties",
+        "puppet",
+        "python",
+        "q",
+        "r",
+        "rpm",
+        "rst",
+        "ruby",
+        "rust",
+        "sass",
+        "scheme",
+        "shell",
+        "sieve",
+        "slim",
+        "smalltalk",
+        "smarty",
+        "solr",
+        "soy",
+        "sparql",
+        "spreadsheet",
+        "sql",
+        "stex",
+        "stylus",
+        "swift",
+        "tcl",
+        "textile",
+        "tiddlywiki",
+        "tiki",
+        "toml",
+        "tornado",
+        "troff",
+        "ttcn-cfg",
+        "ttcn",
+        "turtle",
+        "twig",
+        "vb",
+        "vbscript",
+        "velocity",
+        "verilog",
+        "vhdl",
+        "vue",
+        "xml",
+        "xquery",
+        "yaml",
+        "z80"
+    ];
+    modes.forEach(function (mode) {
+        api.add_files('lib/codemirror/mode/' + mode + "/" + mode + ".js", "client");
+    });
 });
