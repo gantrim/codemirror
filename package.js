@@ -1,7 +1,7 @@
 Package.describe({
     name: 'gantrim:codemirror',
     summary: 'CodeMirror editor for Meteor >= 1.2',
-    version: '1.4.0',
+    version: '1.4.1',
     git: 'https://github.com/gantrim/codemirror.git'
 });
 
@@ -15,8 +15,10 @@ Package.onUse(function (api) {
     api.use([
         'templating@1.1.5',
         'underscore@1.0.4',
+        //'jquery',
         'gantrim:diff-match-patch'
     ], 'client');
+
 
     /**
      *    CodeMirror
@@ -37,20 +39,25 @@ Package.onUse(function (api) {
     /**
      *    Extras: lint
      */
-    ['coffeescript-lint.js',
+    //api.addFiles('lib/codemirror/addon/lint/jshint.js');
+    [
+        //'jshint.js',
+        'coffeescript-lint.js',
         'css-lint.js',
         'html-lint.js',
         'javascript-lint.js',
         'json-lint.js',
         'lint.css',
         'yaml-lint.js',
-        'lint.js'
+        //'jshint.js',
+        'lint.js',
+        //'jshint.js',
     ].forEach(function (item) {
         api.addFiles('lib/codemirror/addon/lint/' + item, 'client');
     });
     api.export([
+        //'JSHINT',
         'jsonlint',
-        'JSHINT',
         'CSSLint'
     ], 'client');
 
