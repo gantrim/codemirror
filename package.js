@@ -1,7 +1,7 @@
 Package.describe({
     name: 'gantrim:codemirror',
     summary: 'CodeMirror editor for Meteor >= 1.2',
-    version: '1.3.22',
+    version: '1.4.0',
     git: 'https://github.com/gantrim/codemirror.git'
 });
 
@@ -193,13 +193,13 @@ Package.onUse(function (api) {
         api.addFiles('lib/codemirror/addon/scroll/' + item, 'client');
     });
 
-    ////TODO: fix worker.js data.type not defined
-    ///**
-    // *    Extras: tern
-    // */
+    //TODO: fix worker.js data.type not defined
+    /**
+     *    Extras: tern
+     */
     //['tern.css',
     //    'tern.js',
-    //    'worker.js'
+    //    //'worker.js'
     //].forEach(function (item) {
     //    api.addFiles('lib/codemirror/addon/tern/' + item, 'client');
     //});
