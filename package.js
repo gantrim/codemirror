@@ -1,7 +1,7 @@
 Package.describe({
     name: 'gantrim:codemirror',
     summary: 'CodeMirror editor for Meteor >= 1.2',
-    version: '1.3.22',
+    version: '1.4.0',
     git: 'https://github.com/gantrim/codemirror.git'
 });
 
@@ -10,10 +10,12 @@ Package.onUse(function (api) {
     if (api.versionsFrom) {
         api.versionsFrom('METEOR@1.2');
     }
-
+    //api.use('gampleman:diff-match-patch');
+    //api.export('diff_match_patch');
     api.use([
         'templating@1.1.5',
-        'underscore@1.0.4'
+        'underscore@1.0.4',
+        'gantrim:diff-match-patch'
     ], 'client');
 
     /**
@@ -78,10 +80,8 @@ Package.onUse(function (api) {
      *    Extras: mode
      */
 
-        //TODO: fix multiplex
     ['loadmode.js',
-        //'multiplex.js',
-        //'multiplex_test.js',
+        'multiplex.js',
         'overlay.js',
         'simple.js'
     ].forEach(function (item) {
@@ -162,29 +162,25 @@ Package.onUse(function (api) {
         api.addFiles('lib/codemirror/addon/hint/' + item, 'client');
     });
 
-    //TODO: Fix merge.js diff_match_patch
-    //
-    ///**
-    // *    Extras: merge
-    // */
-    //[ 'merge.js',
-    //  'merge.css'
-    //].forEach(function(item) {
-    //  api.addFiles('lib/codemirror/addon/merge/' + item, 'client');
-    //});
+    /**
+     *    Extras: merge
+     */
+    [
+        'merge.js',
+        'merge.css'
+    ].forEach(function (item) {
+        api.addFiles('lib/codemirror/addon/merge/' + item, 'client');
+    });
 
 
-    //TODO: fix runmode.node.js exports is not defined
-    ///**
-    // *    Extras: runmode
-    // */
-    //['colorize.js',
-    //    'runmode-standalone.js',
-    //    'runmode.js',
-    //    'runmode.node.js'
-    //].forEach(function (item) {
-    //    api.addFiles('lib/codemirror/addon/runmode/' + item, 'client');
-    //});
+    /**
+     *    Extras: runmode
+     */
+    ['colorize.js',
+        'runmode.js',
+    ].forEach(function (item) {
+        api.addFiles('lib/codemirror/addon/runmode/' + item, 'client');
+    });
 
     /**
      *    Extras: scroll
@@ -198,12 +194,12 @@ Package.onUse(function (api) {
     });
 
     //TODO: fix worker.js data.type not defined
-    ///**
-    // *    Extras: tern
-    // */
+    /**
+     *    Extras: tern
+     */
     //['tern.css',
     //    'tern.js',
-    //    'worker.js'
+    //    //'worker.js'
     //].forEach(function (item) {
     //    api.addFiles('lib/codemirror/addon/tern/' + item, 'client');
     //});
